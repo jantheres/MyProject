@@ -1,0 +1,16 @@
+<html>
+<head>Item List</head>
+<body>
+    <ul>
+        <a href="{%url 'item_create' %}"> Add new Product </a>
+        {%for item in items%}
+        <li>
+            <img src="{{item.image.url}}" alt="{{item.name}}" width="100">
+           Name: {{item.name}}  Description:{{item.description}}
+           <a href="{% url 'item_update' item.pk %}"> Edit </a>
+           <a href="{% url 'item_delete' item.pk %}"> Delete </a>
+        </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
